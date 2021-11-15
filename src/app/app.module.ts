@@ -15,6 +15,11 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { CategoriaCreateComponent } from './components/views/categoria/categoria-create/categoria-create.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
+import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
+import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -27,7 +32,10 @@ import { HomeComponent } from './components/views/home/home.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    CategoriaCreateComponent
+    CategoriaCreateComponent,
+    CategoriaReadComponent,
+    CategoriaDeleteComponent,
+    CategoriaUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,10 @@ import { HomeComponent } from './components/views/home/home.component';
     MatListModule,
     MatIconModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

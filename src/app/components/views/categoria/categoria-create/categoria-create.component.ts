@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Categoria } from '../categoria.modal';
+import { CategoriaService } from './../categoria.service';
 
 @Component({
   selector: 'app-categoria-create',
@@ -7,11 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaCreateComponent implements OnInit {
 
-  constructor() { }
+  categorias: Categoria[] = [];
+
+  displayedColumns: string[] = ["id", "nome", "descricao", "livros", "acoes"];
+
+  constructor(private service: CategoriaService) { }
 
   ngOnInit(): void {
+    this.findAll();
   }
 
-  displayedColumns: string[] = ['id','nome', 'descricao','acoes'];
+  findAll() {
+    
+    this.service.findAll().subscribe((resposta)=> {
+      console.log(resposta);
+      this.categorias = resposta;
+    })
+    
+  }
 
 }
