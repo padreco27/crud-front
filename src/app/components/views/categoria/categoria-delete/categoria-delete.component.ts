@@ -28,6 +28,8 @@ export class CategoriaDeleteComponent implements OnInit {
     this.service.findById(this.categoria.id!).subscribe((resposta) => {
       this.categoria.nome = resposta.nome
       this.categoria.descricao = resposta.descricao
+
+      console.log(this.categoria.nome);
     })
   }
 

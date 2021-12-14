@@ -20,10 +20,15 @@ import { CategoriaDeleteComponent } from './components/views/categoria/categoria
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
+import { LivrosReadAllComponent } from './components/views/livros/livros-read-all/livros-read-all.component';
+
+import { LivrosCreateAllComponent } from './components/views/livros/livros-create-all/livros-create-all.component';
+import { LivrosDeleteAllComponent } from './components/views/livros/livros-delete-all/livros-delete-all.component';
+import { LivrosUpdateAllComponent } from './components/views/livros/livros-update-all/livros-update-all.component';
 
 
 
@@ -38,7 +43,13 @@ import {MatInputModule} from '@angular/material/input';
     CategoriaCreateComponent,
     CategoriaReadComponent,
     CategoriaDeleteComponent,
-    CategoriaUpdateComponent
+    CategoriaUpdateComponent,
+    LivrosReadAllComponent,
+    
+    LivrosCreateAllComponent,
+    LivrosDeleteAllComponent,
+    LivrosUpdateAllComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -59,6 +70,7 @@ import {MatInputModule} from '@angular/material/input';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
       private _snack: MatSnackBar) { }
   
     findAll():Observable<Categoria> {
-      const url = `${this.baseUrl}`
+      const url = `${this.baseUrl}/categorias`
       return this.http.get<Categoria>(url)
     }
 
@@ -31,14 +31,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
     delete(id: String):Observable<void> {
-      const url = `${this.baseUrl}/${id}`
+      const url = `${this.baseUrl}/categorias/${id}`
       return this.http.delete<void>(url)
     }
 
     read(categoria: Categoria): Observable<Categoria>{
-      const url = `${this.baseUrl}`
+      const url = `${this.baseUrl}/categorias`
       return this.http.post<Categoria>(url, categoria);
     }
+
+
+    update(categoria: Categoria):Observable<void> {
+      const url = `${this.baseUrl}/categorias/${categoria.id}`
+      return this.http.put<void>(url, categoria)
+    }
+  
   
     mensagem(str: String): void {
       this._snack.open(`${str}`, 'OK', {
